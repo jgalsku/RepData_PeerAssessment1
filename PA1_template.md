@@ -142,7 +142,7 @@ sum_day_median_imputed <- round(median(data_by_day_imputed$sum_day),2)
 options(scipen=999) # to avoid scientific notation
 ```
 
-The **mean** of the total number of steps taken per day equals **10766.19** and the **median** of the total number of steps taken per day equals **10766.19**. Only the new median estimate for the total daily number of steps differs slightly from the non-imputed data median (10765), the mean is the same as would be expected after imputing the mean steps per interval. Overall, the imputation appears to have reduced the variance of the distribution making it more leptokurtic.
+The **mean** of the total number of steps taken per day equals **10766.19** and the **median** of the total number of steps taken per day equals **10766.19**. Only the new median estimate for the total daily number of steps differs slightly from the non-imputed data median (10765), the mean is the same as before imputation, as would be expected after imputing the mean. Overall, the imputation appears to have reduced the variance of the distribution making it more leptokurtic.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?

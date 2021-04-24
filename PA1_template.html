@@ -475,7 +475,7 @@ with(data = data_by_day_imputed, hist(sum_day, breaks = 7,
 sum_day_mean_imputed &lt;- round(mean(data_by_day_imputed$sum_day),2)
 sum_day_median_imputed &lt;- round(median(data_by_day_imputed$sum_day),2)
 options(scipen=999) # to avoid scientific notation</code></pre>
-<p>The <strong>mean</strong> of the total number of steps taken per day equals <strong>10766.19</strong> and the <strong>median</strong> of the total number of steps taken per day equals <strong>10766.19</strong>. Only the new median estimate for the total daily number of steps differs slightly from the non-imputed data median (10765), the mean is the same as would be expected after imputing the mean steps per interval. Overall, the imputation appears to have reduced the variance of the distribution making it more leptokurtic.</p>
+<p>The <strong>mean</strong> of the total number of steps taken per day equals <strong>10766.19</strong> and the <strong>median</strong> of the total number of steps taken per day equals <strong>10766.19</strong>. Only the new median estimate for the total daily number of steps differs slightly from the non-imputed data median (10765), the mean is the same as before imputation, as would be expected after imputing the mean. Overall, the imputation appears to have reduced the variance of the distribution making it more leptokurtic.</p>
 </div>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
