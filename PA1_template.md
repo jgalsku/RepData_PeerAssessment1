@@ -157,7 +157,7 @@ sum_day_median_imputed <- round(median(data_by_day_imputed$sum_day),2)
 options(scipen=999) # to avoid scientific notation
 ```
 
-The **mean** of the total number of steps taken per day equals **10766.19** and the **median** of the total number of steps taken per day equals **10766.19**. The new estimates for the total daily number of steps differ slightly from the non-imputed data estimates, with a larger difference between the means than between the medians.
+The **mean** of the total number of steps taken per day equals **10766.19** and the **median** of the total number of steps taken per day equals **10766.19**. The new estimates for the total daily number of steps differ slightly from the non-imputed data estimates, with a larger difference between the means than between the medians. Overall, the imputation appears to have "normalized" the data and reduced its variance.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -175,7 +175,7 @@ for (i in 1:nrow(imputed_data)) {
 }
 ```
 
-#### 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:
+#### 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 ```r
 # group data by interval and calculate the average number of steps taken, averaged across all days (y-axis)

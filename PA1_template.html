@@ -479,7 +479,7 @@ with(data = data_by_day_imputed, hist(sum_day,
 sum_day_mean_imputed &lt;- round(mean(data_by_day_imputed$sum_day),2)
 sum_day_median_imputed &lt;- round(median(data_by_day_imputed$sum_day),2)
 options(scipen=999) # to avoid scientific notation</code></pre>
-<p>The <strong>mean</strong> of the total number of steps taken per day equals <strong>10766.19</strong> and the <strong>median</strong> of the total number of steps taken per day equals <strong>10766.19</strong>. The new estimates for the total daily number of steps differ slightly from the non-imputed data estimates, with a larger difference between the means than between the medians.</p>
+<p>The <strong>mean</strong> of the total number of steps taken per day equals <strong>10766.19</strong> and the <strong>median</strong> of the total number of steps taken per day equals <strong>10766.19</strong>. The new estimates for the total daily number of steps differ slightly from the non-imputed data estimates, with a larger difference between the means than between the medians. Overall, the imputation appears to have “normalized” the data and reduced its variance.</p>
 </div>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
@@ -494,8 +494,8 @@ for (i in 1:nrow(imputed_data)) {
         else {imputed_data$day[i] &lt;- &quot;Weekday&quot;}
 }</code></pre>
 </div>
-<div id="make-a-panel-plot-containing-a-time-series-plot-i.e.-type-l-of-the-5-minute-interval-x-axis-and-the-average-number-of-steps-taken-averaged-across-all-weekday-days-or-weekend-days-y-axis.-the-plot-should-look-something-like-the-following-which-was-created-using-simulated-data" class="section level4">
-<h4>2. Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:</h4>
+<div id="make-a-panel-plot-containing-a-time-series-plot-i.e.-type-l-of-the-5-minute-interval-x-axis-and-the-average-number-of-steps-taken-averaged-across-all-weekday-days-or-weekend-days-y-axis." class="section level4">
+<h4>2. Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</h4>
 <pre class="r"><code># group data by interval and calculate the average number of steps taken, averaged across all days (y-axis)
 data_by_interval_day_imputed &lt;- imputed_data %&gt;% 
   dplyr::group_by(day, interval) %&gt;% 
