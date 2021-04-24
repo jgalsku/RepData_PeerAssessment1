@@ -59,11 +59,11 @@ A **histogram** of the total number of steps taken each day is displayed below:
 data_by_day <- data %>% dplyr::group_by(date) %>% dplyr::summarize(sum_day =  sum(steps, na.rm = TRUE))
 
 #plot histogram of total steps per day
-plot_byday <- with(data = data_by_day, hist(sum_day, main = "Total number of steps taken each day", 
+with(data = data_by_day, hist(sum_day, main = "Total number of steps taken each day", 
                                             xlab = "Number of steps"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_byday-1.png)<!-- -->
 
 #### 2. Calculate and report the mean and median total number of steps taken per day
 
@@ -93,7 +93,7 @@ with(data_by_interval, plot(x = interval, y = mean_steps, type = "l",
                             ylab = "Number of steps"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_by_interval-1.png)<!-- -->
 
 #### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -143,13 +143,12 @@ data_by_day_imputed <- imputed_data %>% dplyr::group_by(date) %>%
   dplyr::summarize(sum_day =  sum(steps, na.rm = TRUE))
 
 #plot histogram of total steps per day
-plot_byday_imputed <- with(data = data_by_day_imputed, 
-                           hist(sum_day, 
+with(data = data_by_day_imputed, hist(sum_day, 
                                 main = "Total number of steps taken each day (imputed data)",
                                 xlab = "Number of steps"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_byday_imputed-1.png)<!-- -->
 
 ```r
 # calculate the mean and median of the total number of steps taken per day
@@ -199,6 +198,6 @@ ggplot(data = data_by_interval_day_imputed, aes(x = interval, y = mean_steps)) +
        y = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/panel_plot-1.png)<!-- -->
 
 The plot shows that **activities start earlier and are more intense in the morning during weekdays** in comparison to weekend days, however it **appears that people are more active during the rest of the day in the weekend** as the average number of steps is overall higher than during the weekdays.
